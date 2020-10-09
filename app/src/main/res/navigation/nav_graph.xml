@@ -12,10 +12,26 @@
         <action
             android:id="@+id/action_login4_to_authorization4"
             app:destination="@id/authorization4" />
+        <action
+            android:id="@+id/action_login4_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/authorization4"
         android:name="space.bunkou.a_team.Authorization"
         android:label="fragment_authorization"
-        tools:layout="@layout/fragment_authorization" />
+        tools:layout="@layout/fragment_authorization" >
+        <action
+            android:id="@+id/action_authorization4_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="space.bunkou.a_team.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_login4"
+            app:destination="@id/login4" />
+    </fragment>
 </navigation>

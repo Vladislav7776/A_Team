@@ -25,6 +25,9 @@
     <string name="year_of_birth">Год рождения</string>
     <string name="city">Город</string>
     <string name="area">Район</string>
+    <string name="rank">Должность</string>
+    <string name="Organization">Учреждение</string>
+    <string name="Org2">Организация</string>
     <string name="home">Дом</string>
     <string name="KV">Квартира</string>
     <string name="Add">Добавить</string>

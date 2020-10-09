@@ -27,6 +27,7 @@ class MainFragment : Fragment() {
         personRecycler.layoutManager = LinearLayoutManager(this)
         personRecycler.hasFixedSize()
 
+
     }
 }
 }

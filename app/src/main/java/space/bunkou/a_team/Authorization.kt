@@ -46,23 +46,28 @@ class Authorization : Fragment() {
             if (EditTextOrganization2.text.isNullOrEmpty()) {
                 EditTextOrganization2.setText("-")
             }
-            addPersonToCollection(Person(
-                EditTextCity.text.toString(),
-                EditTextOrganization2.text.toString(),
-                EditTextOrganization.text.toString(),
-                EditTextRank.text.toString(),
-                EditTextArea.text.toString(),
-                EditTextFIO.text.toString(),
-                EditTextBirth.text.toString()
-            ))
+            addPersonToCollection(
+                Person(
+                    EditTextCity.text.toString(),
+                    EditTextOrganization2.text.toString(),
+                    EditTextOrganization.text.toString(),
+                    EditTextRank.text.toString(),
+                    EditTextArea.text.toString(),
+                    EditTextFIO.text.toString(),
+                    EditTextBirth.text.toString()
+                )
+            )
 
-            {
-                Toast.makeText(context, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            EditTextCity.text?.clear()
+            EditTextOrganization2.text?.clear()
+            EditTextOrganization.text?.clear()
+            EditTextRank.text?.clear()
+            EditTextArea.text?.clear()
+            EditTextFIO.text?.clear()
+            EditTextBirth.text?.clear()
 
-//            }
-//            Toast.makeText(context, "Жыве Беларусь!!!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
+            Toast.makeText(context, "Жыве Беларусь!!!", Toast.LENGTH_SHORT).show()
+
         }
     }
+}

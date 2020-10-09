@@ -4,7 +4,7 @@ val newPerson = arrayListOf<Person>()
 
 data class Person(
     val city: String,
-    val institution: String,
+    val organization2: String,
     val organization: String,
     val rank: String,
     val region: String,

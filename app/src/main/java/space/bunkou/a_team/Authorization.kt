@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_authorization.*
+import space.bunkou.a_team.personSet.addPersonToCollection
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -19,24 +20,54 @@ class Authorization : Fragment() {
         return inflater.inflate(R.layout.fragment_authorization, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         ButtonAdd.setOnClickListener {
-//            if (
-//                EditTextFIO.text.isBlank() ||  // проверяем не пустая ли
-//                EditTextBirth.text.isBlank() ||
-//                EditTextCity.text.isBlank() ||
-//                EditTextArea.text.isBlank() ||
-//                EditTextHome.text.isBlank() ||
-//                EditTextKV.text.isBlank()
-//            ) {
-                Toast.makeText(context, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            if (EditTextFIO.text.isNullOrEmpty()) {
+                EditTextFIO.setText("-")
+            }
+            if (EditTextBirth.text.isNullOrEmpty()) {
+                EditTextBirth.setText("-")
+            }
+            if (EditTextCity.text.isNullOrEmpty()) {
+                EditTextCity.setText("-")
+            }
+            if (EditTextArea.text.isNullOrEmpty()) {
+                EditTextArea.setText("-")
+            }
+            if (EditTextRank.text.isNullOrEmpty()) {
+                EditTextRank.setText("-")
+            }
+            if (EditTextOrganization.text.isNullOrEmpty()) {
+                EditTextOrganization.setText("-")
+            }
+            if (EditTextOrganization2.text.isNullOrEmpty()) {
+                EditTextOrganization2.setText("-")
+            }
+            addPersonToCollection(
+                Person(
+                    EditTextCity.text.toString(),
+                    EditTextOrganization2.text.toString(),
+                    EditTextOrganization.text.toString(),
+                    EditTextRank.text.toString(),
+                    EditTextArea.text.toString(),
+                    EditTextFIO.text.toString(),
+                    EditTextBirth.text.toString()
+                )
+            )
 
-//            }
-//            Toast.makeText(context, "Жыве Беларусь!!!", Toast.LENGTH_SHORT).show()
-            return@setOnClickListener
+            EditTextCity.text?.clear()
+            EditTextOrganization2.text?.clear()
+            EditTextOrganization.text?.clear()
+            EditTextRank.text?.clear()
+            EditTextArea.text?.clear()
+            EditTextFIO.text?.clear()
+            EditTextBirth.text?.clear()
+
+            Toast.makeText(context, "Жыве Беларусь!!!", Toast.LENGTH_SHORT).show()
+
         }
     }
 }

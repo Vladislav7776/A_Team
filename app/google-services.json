@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "859147575471",
+    "firebase_url": "https://nesnarodom.firebaseio.com",
+    "project_id": "nesnarodom",
+    "storage_bucket": "nesnarodom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859147575471:android:afb9677950200fe35f745a",
+        "android_client_info": {
+          "package_name": "space.bunkou.a_team"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859147575471-v2r9j3t7tilkc7j86o5p25opj58vfnma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmGPeABRsg4XLdViN35YgABA0M5QQtF8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859147575471-v2r9j3t7tilkc7j86o5p25opj58vfnma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

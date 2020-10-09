@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
     override fun onCreateView(
@@ -23,9 +24,9 @@ class MainFragment : Fragment() {
 
         val adapter = PersonAdapter(personSet.addPersonToCollection())
 
-        personRecycler.adapter = adapter
-        personRecycler.layoutManager = LinearLayoutManager(this)
-        personRecycler.hasFixedSize()
+        recycler_container.adapter = adapter
+        recycler_container.layoutManager = LinearLayoutManager(this)
+        recycler_container.hasFixedSize()
 
 
     }

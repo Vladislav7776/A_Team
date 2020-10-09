@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import space.bunkou.a_team.R
 import space.bunkou.a_team.Person
-import kotlinx.android.synthetic.main.fragment_main.view.*
+import kotlinx.android.synthetic.main.itemperson.view.*
 
 class PersonAdapter(private val personSet: ArrayList<Person>) :
     RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
@@ -15,7 +15,7 @@ class PersonAdapter(private val personSet: ArrayList<Person>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_main, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.itemperson, parent, false)
 
         return PersonViewHolder(view)
     }

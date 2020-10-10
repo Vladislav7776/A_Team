@@ -10,16 +10,15 @@
     app:cardCornerRadius="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/person_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/selectableItemBackground">
-
 
         <TextView
             android:id="@+id/view_fio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,21 +55,10 @@
             android:id="@+id/view_rank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_area" />
-
-        <TextView
-            android:id="@+id/view_organization2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_rank" />
 
         <TextView
             android:id="@+id/view_organization"
@@ -79,8 +67,16 @@
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_organization2" />
+            app:layout_constraintTop_toBottomOf="@id/view_rank" />
 
+        <TextView
+            android:id="@+id/view_organization2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_organization" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

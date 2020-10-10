@@ -43,6 +43,15 @@ class Authorization : Fragment() {
                 EditTextOrganization2.setText("-")
             }
 
+            addData(
+                EditTextFIO,
+                EditTextBirth,
+                EditTextCity,
+                EditTextArea,
+                EditTextOrganization,
+                EditTextRank,
+                EditTextOrganization2
+            )
             EditTextCity.text?.clear()
             EditTextOrganization2.text?.clear()
             EditTextOrganization.text?.clear()

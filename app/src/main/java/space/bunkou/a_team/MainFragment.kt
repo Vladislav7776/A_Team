@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DatabaseReference
@@ -28,14 +29,19 @@ class MainFragment() : Fragment() {
         var myRefPerson: DatabaseReference = REF_DATABASE_ROOT.child("omon")
         val adapter = PersonAdapter()
 
+
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this.context)
         recycleView.hasFixedSize()
         val mPersonListener: AppValueEventListener = AppValueEventListener { dataSnapshot ->
             mList = dataSnapshot.children.map { it.getPersonModel() }
             adapter.setList(mList)
-            recycleView.smoothScrollToPosition(adapter.itemCount)
         }
         myRefPerson.addValueEventListener(mPersonListener)
+        button_add.setOnClickListener {
+            val nav = findNavController()
+            nav.navigate(R.id.login4)
+        }
+
     }
 }

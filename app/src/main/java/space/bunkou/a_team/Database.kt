@@ -17,7 +17,7 @@ fun initDatabase() {
 
 //Функция добавляет данные в базу данных
 fun addData(
-    person: Person,
+
     name: TextView,
     yearOfBirth: TextView,
     city: TextView,
@@ -26,6 +26,7 @@ fun addData(
     rank: TextView,
     organization: TextView,
 ) {
+    val person = Person()
     person.user = name.text.toString()
     person.city = city.text.toString()
     person.data_of_birth = yearOfBirth.text.toString()
@@ -33,7 +34,7 @@ fun addData(
     person.organization = organization.text.toString()
     person.organization2 = organization2.text.toString()
     person.region = region.text.toString()
-    REF_DATABASE_ROOT.push().setValue(person)
+    REF_DATABASE_ROOT.child("омон").push().setValue(person)
 }
 
 // Функция преобразовывает полученые данные из Firebase в модель Person

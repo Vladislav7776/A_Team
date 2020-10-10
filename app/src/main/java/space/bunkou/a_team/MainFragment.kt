@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class MainFragment : Fragment() {
+class MainFragment() : Fragment() {
+    var mList = emptyList<Person>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -20,11 +21,13 @@ class MainFragment : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        var myRefPerson: DatabaseReference = REF_DATABASE_ROOT
+
         super.onActivityCreated(savedInstanceState)
         var recycleView: RecyclerView = recycler_container
+
+        var myRefPerson: DatabaseReference = REF_DATABASE_ROOT.child("omon")
         val adapter = PersonAdapter()
-        var mList = emptyList<Person>()
+
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this.context)
         recycleView.hasFixedSize()

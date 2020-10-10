@@ -3,18 +3,16 @@ package space.bunkou.a_team
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseException
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 
-
+lateinit var AUTH: FirebaseAuth
 lateinit var REF_DATABASE_ROOT: DatabaseReference
 
 //Подключаем базу данных
 fun initDatabase() {
-  var auth = FirebaseDatabase.getInstance()
-    REF_DATABASE_ROOT = auth.getReference("омон")
+    AUTH = FirebaseAuth.getInstance()
+    REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
 }
 
 //Функция добавляет данные в базу данных
@@ -41,3 +39,4 @@ fun addData(
 // Функция преобразовывает полученые данные из Firebase в модель Person
 fun DataSnapshot.getPersonModel(): Person =
     this.getValue(Person::class.java) ?: Person()
+

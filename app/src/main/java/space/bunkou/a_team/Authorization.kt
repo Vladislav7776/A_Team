@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_authorization.*
-import space.bunkou.a_team.personSet.addPersonToCollection
-
+//import space.bunkou.a_team.listPerson.addPersonToCollection
+//
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
@@ -46,17 +46,17 @@ class Authorization : Fragment() {
             if (EditTextOrganization2.text.isNullOrEmpty()) {
                 EditTextOrganization2.setText("-")
             }
-            addPersonToCollection(
-                Person(
-                    EditTextCity.text.toString(),
-                    EditTextOrganization2.text.toString(),
-                    EditTextOrganization.text.toString(),
-                    EditTextRank.text.toString(),
-                    EditTextArea.text.toString(),
-                    EditTextFIO.text.toString(),
-                    EditTextBirth.text.toString()
-                )
-            )
+//            addPersonToCollection(
+//                Person(
+//                    EditTextCity.text.toString(),
+//                    EditTextOrganization2.text.toString(),
+//                    EditTextOrganization.text.toString(),
+//                    EditTextRank.text.toString(),
+//                    EditTextArea.text.toString(),
+//                    EditTextFIO.text.toString(),
+//                    EditTextBirth.text.toString()
+//                )
+//            )
 
             EditTextCity.text?.clear()
             EditTextOrganization2.text?.clear()

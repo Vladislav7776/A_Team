@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
@@ -18,17 +20,19 @@ class MainFragment : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        var myRefPerson: DatabaseReference = REF_DATABASE_ROOT
         super.onActivityCreated(savedInstanceState)
-
-
-
-        val adapter = PersonAdapter(personSet.addPersonToCollection())
-
-        recycler_container.adapter = adapter
-        recycler_container.layoutManager = LinearLayoutManager(this)
-        recycler_container.hasFixedSize()
-
-
+        var recycleView: RecyclerView = recycler_container
+        val adapter = PersonAdapter()
+        var mList = emptyList<Person>()
+        recycleView.adapter = adapter
+        recycleView.layoutManager = LinearLayoutManager(this.context)
+        recycleView.hasFixedSize()
+        val mPersonListener: AppValueEventListener = AppValueEventListener { dataSnapshot ->
+            mList = dataSnapshot.children.map { it.getPersonModel() }
+            adapter.setList(mList)
+            recycleView.smoothScrollToPosition(adapter.itemCount)
+        }
+        myRefPerson.addValueEventListener(mPersonListener)
     }
-}
 }

@@ -8,8 +8,9 @@ import space.bunkou.a_team.R
 import space.bunkou.a_team.Person
 import kotlinx.android.synthetic.main.itemperson.view.*
 
-class PersonAdapter(private val personSet: ArrayList<Person>) :
+class PersonAdapter() :
     RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
+    private var listPerson = emptyList<Person>()
 
     class PersonViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
@@ -21,18 +22,22 @@ class PersonAdapter(private val personSet: ArrayList<Person>) :
     }
 
     override fun getItemCount(): Int {
-        return personSet.size
+        return listPerson.size
     }
 
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
 
-        holder.itemView.view_fio.text = personSet[position].user
-        holder.itemView.view_birth.text = personSet[position].data_of_birth
-        holder.itemView.view_city.text = personSet[position].city
-        holder.itemView.view_area.text = personSet[position].region
-        holder.itemView.view_rank.text = personSet[position].rank
-        holder.itemView.view_organization2.text = personSet[position].organization2
-        holder.itemView.view_organization.text = personSet[position].organization
+        holder.itemView.view_fio.text = listPerson[position].user
+        holder.itemView.view_birth.text = listPerson[position].data_of_birth
+        holder.itemView.view_city.text = listPerson[position].city
+        holder.itemView.view_area.text = listPerson[position].region
+        holder.itemView.view_rank.text = listPerson[position].rank
+        holder.itemView.view_organization2.text = listPerson[position].organization2
+        holder.itemView.view_organization.text = listPerson[position].organization
 
+    }
+
+    fun setList(list: List<Person>) {
+        listPerson = list
     }
 }

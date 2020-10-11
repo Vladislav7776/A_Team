@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
 
 
 class MainFragment() : Fragment() {
-    lateinit var interstitialAd : InterstitialAd  // Реклама
+ //   lateinit var interstitialAd : InterstitialAd  // Реклама
 
 //    // Реклама - начало
 //    MobileAds.initialize(this, "ca-app-pub-4393452075947293~6502531964")

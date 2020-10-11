@@ -10,11 +10,11 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_login4_to_authorization4"
-            app:destination="@id/authorization4" />
-        <action
             android:id="@+id/action_login4_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_login4_to_authorization4"
+            app:destination="@id/authorization4" />
     </fragment>
     <fragment
         android:id="@+id/authorization4"

@@ -36,7 +36,6 @@ fun addData(
     person.region = region.text.toString()
     REF_DATABASE_ROOT.child("омон").push().setValue(person)
 }
-
 // Функция преобразовывает полученые данные из Firebase в модель Person
 fun DataSnapshot.getPersonModel(): Person =
     this.getValue(Person::class.java) ?: Person()

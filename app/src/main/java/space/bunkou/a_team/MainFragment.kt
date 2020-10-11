@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,13 +23,12 @@ class MainFragment() : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
+        val myViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         super.onActivityCreated(savedInstanceState)
-        var recycleView: RecyclerView = recycler_container
+        val recycleView: RecyclerView = recycler_container
 
-        var myRefPerson: DatabaseReference = REF_DATABASE_ROOT.child("omon")
+        val myRefPerson: DatabaseReference = REF_DATABASE_ROOT.child("omon")
         val adapter = PersonAdapter()
-
 
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this.context)
@@ -38,9 +38,14 @@ class MainFragment() : Fragment() {
             adapter.setList(mList)
         }
         myRefPerson.addValueEventListener(mPersonListener)
+
         button_add.setOnClickListener {
             val nav = findNavController()
-            nav.navigate(R.id.login4)
+            if (myViewModel.isAuthorization()) {
+                nav.navigate(R.id.authorization4)
+            } else {
+                nav.navigate(R.id.login4)
+            }
         }
 
     }

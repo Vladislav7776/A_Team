@@ -1,6 +1,5 @@
 package space.bunkou.a_team
 
-
 data class Person(
     var city: String = "",
     var organization2: String = "",

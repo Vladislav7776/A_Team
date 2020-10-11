@@ -30,6 +30,7 @@ class MainFragment() : Fragment() {
         val myRefPerson: DatabaseReference = REF_DATABASE_ROOT.child("omon")
         val adapter = PersonAdapter()
 
+
         recycleView.adapter = adapter
         recycleView.layoutManager = LinearLayoutManager(this.context)
         recycleView.hasFixedSize()

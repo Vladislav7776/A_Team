@@ -37,6 +37,7 @@ class PersonAdapter() :
         return listPersonCache.size
     }
 
+
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
         holder.personItem.visibility = View.VISIBLE
         holder.userName.text = listPersonCache[position].user

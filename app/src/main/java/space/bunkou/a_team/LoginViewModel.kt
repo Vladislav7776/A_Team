@@ -16,6 +16,7 @@ class LoginViewModel : ViewModel() {
         return false
     }
 
+
     fun isAuthorization(): Boolean {
         if (userData.value?.isNullOrEmpty()!!) return false
         return true

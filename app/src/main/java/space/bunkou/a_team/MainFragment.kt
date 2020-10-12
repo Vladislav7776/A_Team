@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -38,7 +39,7 @@ class MainFragment() : Fragment() {
             adapter.setList(mList)
         }
         myRefPerson.addValueEventListener(mPersonListener)
-
+        Toast.makeText(context, myViewModel.myUser.name.value.toString(), Toast.LENGTH_SHORT).show()
         button_add.setOnClickListener {
             val nav = findNavController()
             if (myViewModel.isAuthorization()) {
@@ -47,6 +48,5 @@ class MainFragment() : Fragment() {
                 nav.navigate(R.id.login4)
             }
         }
-
     }
 }

@@ -51,11 +51,12 @@ class PersonAdapter() :
             list
         } else {
             list.filter {
-                it.city.contains(s, true)
+                it.city.contains(s, true) || it.user.contains(s, true) || it.rank.contains(s, true)
             } as ArrayList
         }
         notifyDataSetChanged()
     }
+
     fun setList(list: List<Person>) {
         listPersonCache = list
         notifyDataSetChanged()

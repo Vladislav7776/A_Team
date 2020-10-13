@@ -56,4 +56,8 @@ class PersonAdapter() :
         }
         notifyDataSetChanged()
     }
+    fun setList(list: List<Person>) {
+        listPersonCache = list
+        notifyDataSetChanged()
+    }
 }

@@ -29,10 +29,10 @@ fun addData(
     val person = Person()
     person.user = name.text.toString()
     person.city = city.text.toString()
-    person.data_of_birth = yearOfBirth.text.toString()
+    person.year_of_birth = yearOfBirth.text.toString()
     person.rank = rank.text.toString()
     person.organization = organization.text.toString()
-    person.organization2 = organization2.text.toString()
+    person.institution = organization2.text.toString()
     person.region = region.text.toString()
     REF_DATABASE_ROOT.child("omon").push().setValue(person)
 }

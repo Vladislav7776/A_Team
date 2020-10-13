@@ -38,12 +38,12 @@ class PersonAdapter() :
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
         holder.personItem.visibility = View.VISIBLE
         holder.userName.text = listPersonCache[position].user
-        holder.birthday.text = listPersonCache[position].data_of_birth
+        holder.birthday.text = listPersonCache[position].year_of_birth
         holder.city.text = listPersonCache[position].city
         holder.region.text = listPersonCache[position].region
         holder.rank.text = listPersonCache[position].rank
         holder.organ.text = listPersonCache[position].organization
-        holder.organ2.text = listPersonCache[position].organization2
+        holder.organ2.text = listPersonCache[position].institution
     }
 
     fun setList(s: String, list: List<Person>) {

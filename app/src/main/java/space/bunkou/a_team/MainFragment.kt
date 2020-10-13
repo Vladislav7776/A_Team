@@ -39,10 +39,9 @@ class MainFragment() : Fragment() {
             adapter.setList(mList)
         }
         myRefPerson.addValueEventListener(mPersonListener)
-        Toast.makeText(context, myViewModel.myUser.name.value.toString(), Toast.LENGTH_SHORT).show()
         button_add.setOnClickListener {
             val nav = findNavController()
-            if (myViewModel.isAuthorization()) {
+            if (myViewModel.isAuthorization(nav)) {
                 nav.navigate(R.id.authorization4)
             } else {
                 nav.navigate(R.id.login4)

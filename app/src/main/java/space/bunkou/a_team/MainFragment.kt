@@ -21,23 +21,12 @@ class MainFragment() : Fragment() {
     private var mList = emptyList<Person>()
     val adapter = PersonAdapter()
 
-    @Suppress("UNREACHABLE_CODE")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_main, container, false)
-
-        search_view.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                adapter.setList(search_view.text.toString(), mList)
-            }
-
-            override fun afterTextChanged(s: Editable) {}
-        })
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -64,5 +53,14 @@ class MainFragment() : Fragment() {
                 nav.navigate(R.id.login4)
             }
         }
+        search_view.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                adapter.setList(search_view.text.toString(), mList)
+            }
+
+            override fun afterTextChanged(s: Editable) {}
+        })
     }
 }

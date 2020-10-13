@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tool="http://schemas.android.com/tools"
 
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="15dp"
-    app:cardCornerRadius="16dp"
-    android:background="?attr/selectableItemBackground">
+    android:layout_margin="5dp"
+    android:background="?attr/selectableItemBackground"
+    app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/person_item"
@@ -19,85 +18,83 @@
 
         <TextView
             android:id="@+id/view_fio"
-            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Караев Юрий Хаджимуратович"
-            android:textSize="20sp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/view_birth"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="15dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="г.р. 1966"
+        <LinearLayout
 
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_fio" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/view_fio">
 
-        <TextView
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/view_city"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="г.Минск"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_birth" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
 
-        <TextView
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/view_area"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Советский район"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_city" />
+                <TextView
+                    android:id="@+id/view_birth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="г.р. 1966"
+                    android:textSize="12sp" />
 
-        <TextView
+                <TextView
+                    android:id="@+id/view_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="г.Минск"
+                    android:textSize="12sp" />
 
-            android:id="@+id/view_rank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="175dp"
-            android:layout_marginTop="10dp"
-            android:text="Генерал-майор"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_fio" />
+                <TextView
+                    android:id="@+id/view_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Советский район"
+                    android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/view_organization"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="175dp"
-            android:layout_marginTop="5dp"
-            android:text="Министерство Обороны"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_rank" />
 
-        <TextView
-            android:id="@+id/view_organization2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="175dp"
-            android:layout_marginTop="5dp"
-            android:text="Министр внутренних дел"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_organization" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:id="@+id/view_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Генерал-майор"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/view_organization"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Министерство Обороны"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/view_organization2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Министр внутренних дел"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

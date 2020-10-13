@@ -1,14 +1,16 @@
 package space.bunkou.a_team
 
 import android.widget.EditText
-import androidx.lifecycle.MutableLiveData
 
 data class User(
-    var name: MutableLiveData<String> = MutableLiveData<String>(),
-    var password: MutableLiveData<String> = MutableLiveData<String>()
+    var name: String = "",
+    var password: String = ""
 ) {
-    fun addUserData(name: EditText, password: EditText) {
-        this.name.postValue(name.text.toString())
-        this.password.postValue(password.text.toString())
+    companion object {
+        val instance = ArrayList<User>()
+    }
+
+    fun addUserData(login: EditText, password: EditText) {
+        instance.add(User(login.text.toString(), password.text.toString()))
     }
 }

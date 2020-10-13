@@ -2,23 +2,27 @@ package space.bunkou.a_team
 
 import android.widget.EditText
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import androidx.navigation.NavController
+import space.bunkou.a_team.User.Companion.instance
 
 class LoginViewModel : ViewModel() {
-    val myUser = User()
+    private val myUser = User()
 
     fun isLogin(login: EditText, password: EditText): Boolean {
 
         if (login.text.toString() == "user" && password.text.toString() == "user") {
-            CoroutineScope(Dispatchers.IO).launch { myUser.addUserData(login, password) }
+            myUser.addUserData(login, password)
             return true
         }
         return false
     }
 
-    fun isAuthorization(): Boolean {
-        return myUser.name.value == "user" && myUser.password.value == "user"
+    fun isAuthorization(nav: NavController): Boolean {
+        if (instance.isNullOrEmpty()) {
+            nav.navigate(R.id.login4)
+        } else {
+            if (instance[0].name == "user" && instance[0].password == "user") return true
+        }
+        return false
     }
 }

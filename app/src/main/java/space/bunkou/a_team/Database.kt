@@ -1,5 +1,6 @@
 package space.bunkou.a_team
 
+import android.widget.EditText
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -17,7 +18,6 @@ fun initDatabase() {
 
 //Функция добавляет данные в базу данных
 fun addData(
-
     name: TextView,
     yearOfBirth: TextView,
     city: TextView,
@@ -34,8 +34,9 @@ fun addData(
     person.organization = organization.text.toString()
     person.organization2 = organization2.text.toString()
     person.region = region.text.toString()
-    REF_DATABASE_ROOT.child("омон").push().setValue(person)
+    REF_DATABASE_ROOT.child("omon").push().setValue(person)
 }
+
 // Функция преобразовывает полученые данные из Firebase в модель Person
 fun DataSnapshot.getPersonModel(): Person =
     this.getValue(Person::class.java) ?: Person()

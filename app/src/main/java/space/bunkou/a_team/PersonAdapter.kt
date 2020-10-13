@@ -6,8 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import space.bunkou.a_team.R
-import space.bunkou.a_team.Person
 import kotlinx.android.synthetic.main.itemperson.view.*
 
 class PersonAdapter() :
@@ -46,6 +44,17 @@ class PersonAdapter() :
         holder.rank.text = listPersonCache[position].rank
         holder.organ.text = listPersonCache[position].organization
         holder.organ2.text = listPersonCache[position].organization2
+    }
+
+    fun setList(s: String, list: List<Person>) {
+        listPersonCache = if (s.isEmpty()) {
+            list
+        } else {
+            list.filter {
+                it.city.contains(s, true) || it.user.contains(s, true) || it.rank.contains(s, true)
+            } as ArrayList
+        }
+        notifyDataSetChanged()
     }
 
     fun setList(list: List<Person>) {
